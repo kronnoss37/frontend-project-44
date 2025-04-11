@@ -34,6 +34,7 @@ export default [
       'no-underscore-dangle': ['error', { allow: ['__filename', '__dirname'] }],
       'import/extensions': 'off',
       'no-console': 'off',
+      'import/no-extraneous-dependencies': 'off',
     },
   },
 ];
