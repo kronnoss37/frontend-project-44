@@ -8,6 +8,26 @@
 
 ### Brain Games project installation
 
-See how to install the project and start the first game - parity check.
+See how to install the project.
 
-[![asciicast](https://asciinema.org/a/aOfaU41IBl1ljgdZG0g70yP9t.svg)](https://asciinema.org/a/aOfaU41IBl1ljgdZG0g70yP9t)
+```bash
+# Clone the repository
+git clone
+
+# Navigate to the project directory
+cd frontend-project-44
+
+# Install dependencies for the program to work correctly
+make install
+```
+
+### Launching games in the Brain Games project
+
+Run the Brain Games.
+The first game is a Parity Check.
+
+[![asciicast](https://asciinema.org/a/ERLFX4P7W4Ha2u4bf6LNJgPLD.svg)](https://asciinema.org/a/ERLFX4P7W4Ha2u4bf6LNJgPLD)
+
+The second game is a Calculator.
+
+[![asciicast](https://asciinema.org/a/ZIHF8OqkLga1TwHQ0Bkm27KwQ.svg)](https://asciinema.org/a/ZIHF8OqkLga1TwHQ0Bkm27KwQ)
