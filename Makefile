@@ -10,6 +10,10 @@ brain-games:
 brain-even:
 	node bin/brain-even.js
 
+#	Target: run file brain-calc.js
+brain-calc:
+	node bin/brain-calc.js
+
 #	Target: simulation of publishing a progect to npm catalog
 publish:
 	npm publish --dry-run
