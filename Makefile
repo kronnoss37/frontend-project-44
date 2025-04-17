@@ -8,11 +8,11 @@ brain-games:
 
 #	Target: run file brain-even.js
 brain-even:
-	node bin/brain-even.js
+	node bin/games/brain-even.js
 
 #	Target: run file brain-calc.js
 brain-calc:
-	node bin/brain-calc.js
+	node bin/games/brain-calc.js
 
 #	Target: simulation of publishing a progect to npm catalog
 publish:
