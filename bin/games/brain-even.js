@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getRandomNumber, communicationWithUser } from '../src/index.js';
+import { getRandomNumber, communicationWithUser } from '../../src/index.js';
 
 const getCorrectAnswerInThisGame = (num) => (num % 2 === 0 ? 'yes' : 'no');
 

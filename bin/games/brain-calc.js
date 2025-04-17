@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getRandomExpression, communicationWithUser } from '../src/index.js';
+import { getRandomExpression, communicationWithUser } from '../../src/index.js';
 
 const getCorrectAnswerInThisGame = (mathExpression) => {
   const arrayElements = mathExpression.split(' ');
