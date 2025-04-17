@@ -12,7 +12,7 @@ See how to install the project.
 
 ```bash
 # Clone the repository
-git clone
+git clone https://github.com/kronnoss37/frontend-project-44.git
 
 # Navigate to the project directory
 cd frontend-project-44
@@ -23,7 +23,7 @@ make install
 
 ### Launching games in the Brain Games project
 
-Run the Brain Games.
+Run the Brain Games.  
 The first game is a Parity Check.
 
 [![asciicast](https://asciinema.org/a/ERLFX4P7W4Ha2u4bf6LNJgPLD.svg)](https://asciinema.org/a/ERLFX4P7W4Ha2u4bf6LNJgPLD)
