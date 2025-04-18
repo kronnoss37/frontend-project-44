@@ -3,16 +3,43 @@ import greetingUser from './cli.js';
 
 export const getRandomNumber = (num = 100) => Math.floor(Math.random() * (num + 1));
 
-export const getRandomExpression = () => {
+export const getRandomMathOperator = () => {
   const arrayOfOperators = ['+', '-', '*'];
-  const mathOperator = arrayOfOperators[getRandomNumber(arrayOfOperators.length - 1)];
-  let maxNumberInOperation = 50;
-  const firstOperand = getRandomNumber(maxNumberInOperation);
-  if (mathOperator === '*') {
-    maxNumberInOperation = 10;
+  return arrayOfOperators[getRandomNumber(arrayOfOperators.length - 1)];
+};
+
+export const isEvenNumber = (num) => (num % 2 === 0 ? 'yes' : 'no');
+
+export const calculateExpression = (firstOperand, secondOperand, mathOperator) => {
+  switch (mathOperator) {
+    case '+':
+      return firstOperand + secondOperand;
+    case '-':
+      return firstOperand - secondOperand;
+    case '*':
+      return firstOperand * secondOperand;
+    default:
+      return null;
   }
-  const secondOperand = getRandomNumber(maxNumberInOperation);
-  return `${firstOperand} ${mathOperator} ${secondOperand}`;
+};
+
+export const calculateGCD = (firstNum, secondNum) => {
+  let firstNumber = firstNum;
+  let secondNumber = secondNum;
+
+  if (firstNumber < secondNumber) {
+    const temp = firstNumber;
+    firstNumber = secondNumber;
+    secondNumber = temp;
+  }
+
+  let GCD = true;
+  while (GCD) {
+    GCD = firstNumber % secondNumber;
+    firstNumber = secondNumber;
+    secondNumber = GCD;
+  }
+  return firstNumber;
 };
 
 export const normalizeUserAnswer = (userAnswer) => {
@@ -20,7 +47,12 @@ export const normalizeUserAnswer = (userAnswer) => {
   return Number.isNaN(answerToNumber) ? userAnswer.trim().toLowerCase() : answerToNumber;
 };
 
-export const communicationWithUser = (rule, makeUpQuestion, getAnswer) => {
+export const makeQuestion = (...params) => {
+  console.log(`Question: ${params.join(' ')}`);
+  return true;
+};
+
+export const communicationWithUser = (rule, getAnswer) => {
   const userName = greetingUser();
   console.log(rule);
 
@@ -28,11 +60,9 @@ export const communicationWithUser = (rule, makeUpQuestion, getAnswer) => {
   let countCorrectAnswers = 0;
 
   while (countCorrectAnswers < amountOfCorrectAnswers) {
-    const questionInCurrentGame = makeUpQuestion();
-    console.log(`Question: ${questionInCurrentGame}`);
+    const correctAnswer = getAnswer();
     let userAnswer = readlineSync.question('Your answer: ');
     userAnswer = normalizeUserAnswer(userAnswer);
-    const correctAnswer = getAnswer(questionInCurrentGame);
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
       countCorrectAnswers += 1;
