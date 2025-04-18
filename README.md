@@ -31,3 +31,7 @@ The first game is a Parity Check.
 The second game is a Calculator.
 
 [![asciicast](https://asciinema.org/a/ZIHF8OqkLga1TwHQ0Bkm27KwQ.svg)](https://asciinema.org/a/ZIHF8OqkLga1TwHQ0Bkm27KwQ)
+
+The third game is a Find the Greatest Common Divisor.
+
+[![asciicast](https://asciinema.org/a/JQJIBslEOqNiOkzLZ0x1EuKEp.svg)](https://asciinema.org/a/JQJIBslEOqNiOkzLZ0x1EuKEp)
