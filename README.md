@@ -36,6 +36,10 @@ The third game is a Find the Greatest Common Divisor.
 
 [![asciicast](https://asciinema.org/a/JQJIBslEOqNiOkzLZ0x1EuKEp.svg)](https://asciinema.org/a/JQJIBslEOqNiOkzLZ0x1EuKEp)
 
-The fourth game is a Arithmetic Progression.
+The fourth game is an Arithmetic Progression.
 
 [![asciicast](https://asciinema.org/a/STnYU5slCtNE1Uxua9l7o9YMr.svg)](https://asciinema.org/a/STnYU5slCtNE1Uxua9l7o9YMr)
+
+The fifth game is a Check if a Number id Prime.
+
+[![asciicast](https://asciinema.org/a/rAnxSqPZ83GjdntXsrSWUNnDf.svg)](https://asciinema.org/a/rAnxSqPZ83GjdntXsrSWUNnDf)
