@@ -18,6 +18,10 @@ brain-calc:
 brain-gcd:
 	node bin/games/brain-gcd.js
 
+#	Target: run file brain-progression.js
+brain-progression:
+	node bin/games/brain-progression.js
+
 #	Target: simulation of publishing a progect to npm catalog
 publish:
 	npm publish --dry-run
