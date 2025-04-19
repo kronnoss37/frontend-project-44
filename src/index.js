@@ -1,7 +1,8 @@
 import readlineSync from 'readline-sync';
 import greetingUser from './cli.js';
 
-export const getRandomNumber = (num = 100) => Math.floor(Math.random() * (num + 1));
+// eslint-disable-next-line max-len
+export const getRandomNumber = (max = 100, min = 0) => Math.floor(Math.random() * (max - min + 1) + min);
 
 export const getRandomMathOperator = () => {
   const arrayOfOperators = ['+', '-', '*'];
@@ -40,6 +41,19 @@ export const calculateGCD = (firstNum, secondNum) => {
     secondNumber = GCD;
   }
   return firstNumber;
+};
+
+export const makeProgression = (num, step) => {
+  const resultProgression = [];
+  const amountOfNumsInProgression = 10;
+  let currentNum = num;
+
+  for (let i = 0; i < amountOfNumsInProgression; i += 1) {
+    resultProgression[i] = currentNum;
+    currentNum += step;
+  }
+
+  return resultProgression;
 };
 
 export const normalizeUserAnswer = (userAnswer) => {
