@@ -56,6 +56,16 @@ export const makeProgression = (num, step) => {
   return resultProgression;
 };
 
+export const isPrimeNumber = (num) => {
+  if (num <= 1) return 'no';
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (!(num % i) && num !== i) {
+      return 'no';
+    }
+  }
+  return 'yes';
+};
+
 export const normalizeUserAnswer = (userAnswer) => {
   const answerToNumber = Number(userAnswer);
   return Number.isNaN(answerToNumber) ? userAnswer.trim().toLowerCase() : answerToNumber;
