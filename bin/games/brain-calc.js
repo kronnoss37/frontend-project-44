@@ -1,10 +1,21 @@
 #!/usr/bin/env node
 
-import {
-  communicationWithUser, makeQuestion, getRandomNumber, getRandomMathOperator, calculateExpression,
-} from '../../src/index.js';
+import { communicationWithUser, getRandomNumber, getRandomMathOperator } from '../../src/index.js';
 
-const getCorrectAnswerInThisGame = () => {
+const calculateExpression = (firstOperand, mathOperator, secondOperand) => {
+  switch (mathOperator) {
+    case '+':
+      return firstOperand + secondOperand;
+    case '-':
+      return firstOperand - secondOperand;
+    case '*':
+      return firstOperand * secondOperand;
+    default:
+      return null;
+  }
+};
+
+const prepareQuestionAndAnswer = () => {
   let maxNumberInOperation = 50;
   const firstNum = getRandomNumber(maxNumberInOperation);
   const mathOperator = getRandomMathOperator();
@@ -12,10 +23,12 @@ const getCorrectAnswerInThisGame = () => {
     maxNumberInOperation = 10;
   }
   const secondNum = getRandomNumber(maxNumberInOperation);
-  makeQuestion(firstNum, mathOperator, secondNum);
-  return calculateExpression(firstNum, secondNum, mathOperator);
+
+  const mathExpression = [firstNum, mathOperator, secondNum];
+  const correctAnswer = calculateExpression(...mathExpression);
+  return [mathExpression, correctAnswer];
 };
 
 const rulesOfTheGame = 'What is the result of the expression?';
 
-communicationWithUser(rulesOfTheGame, getCorrectAnswerInThisGame);
+communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer);

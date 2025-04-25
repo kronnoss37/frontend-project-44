@@ -9,74 +9,21 @@ export const getRandomMathOperator = () => {
   return arrayOfOperators[getRandomNumber(arrayOfOperators.length - 1)];
 };
 
-export const isEvenNumber = (num) => (num % 2 === 0 ? 'yes' : 'no');
-
-export const calculateExpression = (firstOperand, secondOperand, mathOperator) => {
-  switch (mathOperator) {
-    case '+':
-      return firstOperand + secondOperand;
-    case '-':
-      return firstOperand - secondOperand;
-    case '*':
-      return firstOperand * secondOperand;
-    default:
-      return null;
-  }
-};
-
-export const calculateGCD = (firstNum, secondNum) => {
-  let firstNumber = firstNum;
-  let secondNumber = secondNum;
-
-  if (firstNumber < secondNumber) {
-    const temp = firstNumber;
-    firstNumber = secondNumber;
-    secondNumber = temp;
-  }
-
-  let GCD = true;
-  while (GCD) {
-    GCD = firstNumber % secondNumber;
-    firstNumber = secondNumber;
-    secondNumber = GCD;
-  }
-  return firstNumber;
-};
-
-export const makeProgression = (num, step) => {
-  const resultProgression = [];
-  const amountOfNumsInProgression = 10;
-  let currentNum = num;
-
-  for (let i = 0; i < amountOfNumsInProgression; i += 1) {
-    resultProgression[i] = currentNum;
-    currentNum += step;
-  }
-
-  return resultProgression;
-};
+export const isEvenNumber = (num) => num % 2 === 0;
 
 export const isPrimeNumber = (num) => {
-  if (num <= 1) return 'no';
+  if (num <= 1) return false;
   for (let i = 2; i <= Math.sqrt(num); i += 1) {
     if (!(num % i) && num !== i) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
-};
-
-export const normalizeUserAnswer = (userAnswer) => {
-  const answerToNumber = Number(userAnswer);
-  return Number.isNaN(answerToNumber) ? userAnswer.trim().toLowerCase() : answerToNumber;
-};
-
-export const makeQuestion = (...params) => {
-  console.log(`Question: ${params.join(' ')}`);
   return true;
 };
 
-export const communicationWithUser = (rule, getAnswer) => {
+export const normalizeUserAnswer = (userAnswer) => userAnswer.trim().toLowerCase();
+
+export const communicationWithUser = (rule, prepareQuestionAndAnswer) => {
   const userName = greetingUser();
   console.log(rule);
 
@@ -84,10 +31,12 @@ export const communicationWithUser = (rule, getAnswer) => {
   let countCorrectAnswers = 0;
 
   while (countCorrectAnswers < amountOfCorrectAnswers) {
-    const correctAnswer = getAnswer();
+    const [questionParams, correctAnswer] = prepareQuestionAndAnswer();
+    console.log(`Question: ${questionParams.join(' ')}`);
+
     let userAnswer = readlineSync.question('Your answer: ');
     userAnswer = normalizeUserAnswer(userAnswer);
-    if (correctAnswer === userAnswer) {
+    if (String(correctAnswer) === userAnswer) {
       console.log('Correct!');
       countCorrectAnswers += 1;
     } else {

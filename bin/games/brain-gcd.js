@@ -1,16 +1,34 @@
 #!/usr/bin/env node
 
-import {
-  getRandomNumber, makeQuestion, communicationWithUser, calculateGCD,
-} from '../../src/index.js';
+import { getRandomNumber, communicationWithUser } from '../../src/index.js';
 
-const getCorrectAnswerInThisGame = () => {
+const calculateGCD = (numbers) => {
+  let [firstNumber, secondNumber] = numbers;
+
+  if (firstNumber < secondNumber) {
+    const temp = firstNumber;
+    firstNumber = secondNumber;
+    secondNumber = temp;
+  }
+
+  let GCD = true;
+  while (GCD) {
+    GCD = firstNumber % secondNumber;
+    firstNumber = secondNumber;
+    secondNumber = GCD;
+  }
+  return firstNumber;
+};
+
+const prepareQuestionAndAnswer = () => {
   const firstNum = getRandomNumber();
   const secondNum = getRandomNumber();
-  makeQuestion(firstNum, secondNum);
-  return calculateGCD(firstNum, secondNum);
+
+  const numbers = [firstNum, secondNum];
+  const correctAnswer = calculateGCD(numbers);
+  return [numbers, correctAnswer];
 };
 
 const rulesOfTheGame = 'Find the greatest common divisor of given numbers.';
 
-communicationWithUser(rulesOfTheGame, getCorrectAnswerInThisGame);
+communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer);

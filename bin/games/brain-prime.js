@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-import {
-  communicationWithUser, makeQuestion, getRandomNumber, isPrimeNumber,
-} from '../../src/index.js';
+import { communicationWithUser, getRandomNumber, isPrimeNumber } from '../../src/index.js';
 
-const getCorrectAnswerInThisGame = () => {
+const getCorrectAnswer = (...num) => (isPrimeNumber(num) ? 'yes' : 'no');
+
+const prepareQuestionAndAnswer = () => {
   const num = getRandomNumber();
-  makeQuestion(num);
-  return isPrimeNumber(num);
+  const correctAnswer = getCorrectAnswer(num);
+  return [[num], correctAnswer];
 };
 
 const rulesOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-communicationWithUser(rulesOfTheGame, getCorrectAnswerInThisGame);
+communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer);
