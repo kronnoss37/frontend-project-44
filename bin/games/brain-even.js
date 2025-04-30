@@ -1,14 +1,7 @@
 #!/usr/bin/env node
 
-import { getRandomNumber, communicationWithUser, isEvenNumber } from '../../src/index.js';
-
-const getCorrectAnswer = (num) => (isEvenNumber(num) ? 'yes' : 'no');
-
-const prepareQuestionAndAnswer = () => {
-  const num = getRandomNumber();
-  const correctAnswer = getCorrectAnswer(num);
-  return [[num], correctAnswer];
-};
+import { communicationWithUser } from '../../src/index.js';
+import prepareQuestionAndAnswer from '../../src/games/even.js';
 
 const rulesOfTheGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 

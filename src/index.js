@@ -4,24 +4,9 @@ import greetingUser from './cli.js';
 // eslint-disable-next-line max-len
 export const getRandomNumber = (max = 100, min = 0) => Math.floor(Math.random() * (max - min + 1) + min);
 
-export const getRandomMathOperator = () => {
-  const arrayOfOperators = ['+', '-', '*'];
-  return arrayOfOperators[getRandomNumber(arrayOfOperators.length - 1)];
-};
-
-export const isEvenNumber = (num) => num % 2 === 0;
-
-export const isPrimeNumber = (num) => {
-  if (num <= 1) return false;
-  for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (!(num % i) && num !== i) {
-      return false;
-    }
-  }
-  return true;
-};
-
 export const normalizeUserAnswer = (userAnswer) => userAnswer.trim().toLowerCase();
+
+export const makeQuestion = (...params) => params.join(' ');
 
 export const communicationWithUser = (rule, prepareQuestionAndAnswer) => {
   const userName = greetingUser();
@@ -31,8 +16,8 @@ export const communicationWithUser = (rule, prepareQuestionAndAnswer) => {
   let countCorrectAnswers = 0;
 
   while (countCorrectAnswers < amountOfCorrectAnswers) {
-    const [questionParams, correctAnswer] = prepareQuestionAndAnswer();
-    console.log(`Question: ${questionParams.join(' ')}`);
+    const [question, correctAnswer] = prepareQuestionAndAnswer();
+    console.log(`Question: ${question}`);
 
     let userAnswer = readlineSync.question('Your answer: ');
     userAnswer = normalizeUserAnswer(userAnswer);
