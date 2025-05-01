@@ -1,10 +1,9 @@
 import readlineSync from 'readline-sync';
 import greetingUser from './cli.js';
 
-// eslint-disable-next-line max-len
 export const getRandomNumber = (max = 100, min = 0) => Math.floor(Math.random() * (max - min + 1) + min);
 
-export const normalizeUserAnswer = (userAnswer) => userAnswer.trim().toLowerCase();
+export const normalizeUserAnswer = userAnswer => userAnswer.trim().toLowerCase();
 
 export const makeQuestion = (...params) => params.join(' ');
 
@@ -24,7 +23,8 @@ export const communicationWithUser = (rule, prepareQuestionAndAnswer) => {
     if (String(correctAnswer) === userAnswer) {
       console.log('Correct!');
       countCorrectAnswers += 1;
-    } else {
+    }
+    else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
       return false;
     }
