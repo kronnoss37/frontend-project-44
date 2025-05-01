@@ -1,40 +1,26 @@
-import globals from 'globals';
+import js from "@eslint/js";
+import globals from "globals";
+import { defineConfig } from "eslint/config";
+import stylistic from '@stylistic/eslint-plugin';
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { FlatCompat } from '@eslint/eslintrc';
-import pluginJs from '@eslint/js';
-import importPlugin from 'eslint-plugin-import';
 
-// mimic CommonJS variables -- not needed if using CommonJS
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: pluginJs.configs.recommended,
-});
-
-export default [
+export default defineConfig([
+  stylistic.configs.recommended,
   {
+    ignores: ['eslint.config.js'],
+  },
+  {
+    files: ['**/*.{js,mjs,cjs}'],
+    plugins: { js },
+    extends: ['js/recommended'],
+  },
+  {
+    files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {
       globals: globals.node,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-      },
     },
-    plugins: { import: importPlugin },
     rules: {
-      ...importPlugin.configs.recommended.rules,
+      '@stylistic/semi': ['error', 'always'],
     },
   },
-  ...compat.extends('airbnb-base'),
-  {
-    rules: {
-      'no-underscore-dangle': ['error', { allow: ['__filename', '__dirname'] }],
-      'import/extensions': 'off',
-      'no-console': 'off',
-      'import/no-extraneous-dependencies': 'off',
-    },
-  },
-];
+]);
