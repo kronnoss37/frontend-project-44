@@ -18,14 +18,18 @@ const getRandomMathOperator = () => {
   return arrayOfOperators[getRandomNumber(arrayOfOperators.length - 1)];
 };
 
-export const prepareQuestionAndAnswer = () => {
+const getSecondOperand = (mathOperator) => {
   let maxNumberInOperation = 50;
-  const firstNum = getRandomNumber(maxNumberInOperation);
-  const mathOperator = getRandomMathOperator();
   if (mathOperator === '*') {
     maxNumberInOperation = 10;
   }
-  const secondNum = getRandomNumber(maxNumberInOperation);
+  return getRandomNumber(maxNumberInOperation);
+};
+
+export const prepareQuestionAndAnswer = () => {
+  const firstNum = getRandomNumber(50);
+  const mathOperator = getRandomMathOperator();
+  const secondNum = getSecondOperand(mathOperator);
 
   const correctAnswer = calculateExpression(firstNum, mathOperator, secondNum);
   const qeuestionParam = makeQuestion(firstNum, mathOperator, secondNum);
