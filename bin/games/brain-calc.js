@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 import { communicationWithUser } from '../../src/index.js';
-import prepareQuestionAndAnswer from '../../src/games/calculator.js';
-
-const rulesOfTheGame = 'What is the result of the expression?';
+import { prepareQuestionAndAnswer, rulesOfTheGame } from '../../src/games/calculator.js';
 
 communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer);

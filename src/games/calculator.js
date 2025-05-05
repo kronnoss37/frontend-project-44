@@ -18,7 +18,7 @@ const getRandomMathOperator = () => {
   return arrayOfOperators[getRandomNumber(arrayOfOperators.length - 1)];
 };
 
-export default function prepareQuestionAndAnswer() {
+export const prepareQuestionAndAnswer = () => {
   let maxNumberInOperation = 50;
   const firstNum = getRandomNumber(maxNumberInOperation);
   const mathOperator = getRandomMathOperator();
@@ -30,4 +30,6 @@ export default function prepareQuestionAndAnswer() {
   const correctAnswer = calculateExpression(firstNum, mathOperator, secondNum);
   const qeuestionParam = makeQuestion(firstNum, mathOperator, secondNum);
   return [qeuestionParam, correctAnswer];
-}
+};
+
+export const rulesOfTheGame = 'What is the result of the expression?';

@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import { communicationWithUser } from '../../src/index.js';
-import prepareQuestionAndAnswer from '../../src/games/progression.js';
 
-const rulesOfTheGame = 'What number is missing in the progression?';
+import { communicationWithUser } from '../../src/index.js';
+import { prepareQuestionAndAnswer, rulesOfTheGame } from '../../src/games/progression.js';
 
 communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer);

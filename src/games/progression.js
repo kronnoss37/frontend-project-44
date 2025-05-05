@@ -13,7 +13,7 @@ const makeProgression = (num, step) => {
   return resultProgression;
 };
 
-export default function prepareQuestionAndAnswer() {
+export const prepareQuestionAndAnswer = () => {
   const stepOfProgression = getRandomNumber(20, 1);
   const firstNumInProgression = getRandomNumber(20, 1);
   const progression = makeProgression(firstNumInProgression, stepOfProgression);
@@ -23,4 +23,6 @@ export default function prepareQuestionAndAnswer() {
   progression[indexOfMissingNum] = '..';
   const qeuestionParam = makeQuestion(progression.join(' '));
   return [qeuestionParam, conversationOfNum];
-}
+};
+
+export const rulesOfTheGame = 'What number is missing in the progression?';

@@ -19,11 +19,13 @@ const calculateGCD = (firstNum, secondNum) => {
   return firstNumber;
 };
 
-export default function prepareQuestionAndAnswer() {
+export const prepareQuestionAndAnswer = () => {
   const firstNum = getRandomNumber();
   const secondNum = getRandomNumber();
 
   const correctAnswer = calculateGCD(firstNum, secondNum);
   const qeuestionParam = makeQuestion(firstNum, secondNum);
   return [qeuestionParam, correctAnswer];
-}
+};
+
+export const rulesOfTheGame = 'Find the greatest common divisor of given numbers.';

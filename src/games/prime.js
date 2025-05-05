@@ -12,9 +12,11 @@ const isPrimeNumber = (num) => {
 
 const getCorrectAnswer = (...num) => (isPrimeNumber(num) ? 'yes' : 'no');
 
-export default function prepareQuestionAndAnswer() {
+export const prepareQuestionAndAnswer = () => {
   const num = getRandomNumber();
   const correctAnswer = getCorrectAnswer(num);
   const qeuestionParam = makeQuestion(num);
   return [qeuestionParam, correctAnswer];
-}
+};
+
+export const rulesOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';

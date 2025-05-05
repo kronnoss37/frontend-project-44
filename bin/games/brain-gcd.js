@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 import { communicationWithUser } from '../../src/index.js';
-import prepareQuestionAndAnswer from '../../src/games/gcd.js';
-
-const rulesOfTheGame = 'Find the greatest common divisor of given numbers.';
+import { prepareQuestionAndAnswer, rulesOfTheGame } from '../../src/games/gcd.js';
 
 communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer);
