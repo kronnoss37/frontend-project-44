@@ -26,7 +26,7 @@ brain-progression:
 brain-prime:
 	node bin/games/brain-prime.js
 
-#	Target: simulation of publishing a progect to npm catalog
+#	Target: simulation of publishing a project to npm catalog
 publish:
 	npm publish --dry-run
 
