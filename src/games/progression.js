@@ -1,4 +1,4 @@
-import { getRandomNumber, makeQuestion } from '../index.js'
+import { getRandomNumber, makeQuestion, communicationWithUser } from '../index.js'
 
 const makeProgression = (num, step) => {
   const resultProgression = []
@@ -13,7 +13,7 @@ const makeProgression = (num, step) => {
   return resultProgression
 }
 
-export const prepareQuestionAndAnswer = () => {
+const prepareQuestionAndAnswer = () => {
   const stepOfProgression = getRandomNumber(20, 1)
   const firstNumInProgression = getRandomNumber(20, 1)
   const progression = makeProgression(firstNumInProgression, stepOfProgression)
@@ -25,4 +25,7 @@ export const prepareQuestionAndAnswer = () => {
   return [qeuestionParam, conversationOfNum]
 }
 
-export const rulesOfTheGame = 'What number is missing in the progression?'
+export default () => {
+  const rulesOfTheGame = 'What number is missing in the progression?'
+  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer)
+}

@@ -1,4 +1,4 @@
-import { getRandomNumber, makeQuestion } from '../index.js'
+import { getRandomNumber, makeQuestion, communicationWithUser } from '../index.js'
 
 const isPrimeNumber = (num) => {
   if (num <= 1) return false
@@ -12,11 +12,14 @@ const isPrimeNumber = (num) => {
 
 const getCorrectAnswer = (...num) => (isPrimeNumber(num) ? 'yes' : 'no')
 
-export const prepareQuestionAndAnswer = () => {
+const prepareQuestionAndAnswer = () => {
   const num = getRandomNumber()
   const correctAnswer = getCorrectAnswer(num)
   const qeuestionParam = makeQuestion(num)
   return [qeuestionParam, correctAnswer]
 }
 
-export const rulesOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+export default () => {
+  const rulesOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer)
+}

@@ -1,4 +1,4 @@
-import { getRandomNumber, makeQuestion } from '../index.js'
+import { getRandomNumber, makeQuestion, communicationWithUser } from '../index.js'
 
 const calculateExpression = (firstOperand, mathOperator, secondOperand) => {
   switch (mathOperator) {
@@ -26,7 +26,7 @@ const getSecondOperand = (mathOperator) => {
   return getRandomNumber(maxNumberInOperation)
 }
 
-export const prepareQuestionAndAnswer = () => {
+const prepareQuestionAndAnswer = () => {
   const firstNum = getRandomNumber(50)
   const mathOperator = getRandomMathOperator()
   const secondNum = getSecondOperand(mathOperator)
@@ -36,4 +36,7 @@ export const prepareQuestionAndAnswer = () => {
   return [qeuestionParam, correctAnswer]
 }
 
-export const rulesOfTheGame = 'What is the result of the expression?'
+export default () => {
+  const rulesOfTheGame = 'What is the result of the expression?'
+  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer)
+}

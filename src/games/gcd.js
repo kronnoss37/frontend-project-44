@@ -1,4 +1,4 @@
-import { getRandomNumber, makeQuestion } from '../index.js'
+import { getRandomNumber, makeQuestion, communicationWithUser } from '../index.js'
 
 const calculateGCD = (firstNum, secondNum) => {
   let firstNumber = firstNum
@@ -19,7 +19,7 @@ const calculateGCD = (firstNum, secondNum) => {
   return firstNumber
 }
 
-export const prepareQuestionAndAnswer = () => {
+const prepareQuestionAndAnswer = () => {
   const firstNum = getRandomNumber()
   const secondNum = getRandomNumber()
 
@@ -28,4 +28,7 @@ export const prepareQuestionAndAnswer = () => {
   return [qeuestionParam, correctAnswer]
 }
 
-export const rulesOfTheGame = 'Find the greatest common divisor of given numbers.'
+export default () => {
+  const rulesOfTheGame = 'Find the greatest common divisor of given numbers.'
+  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer)
+}

@@ -31,5 +31,4 @@ export const communicationWithUser = (rule, prepareQuestionAndAnswer) => {
   }
 
   console.log(`Congratulations, ${userName}!`)
-  return true
 }
