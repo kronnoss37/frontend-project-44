@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import runDefinePrimeGame from '../../src/games/even.js'
+import runDefinePrimeGame from '../../src/games/prime.js'
 
 runDefinePrimeGame()
