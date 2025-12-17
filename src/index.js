@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync'
-import greetingUser from './cli.js'
 
 export const getRandomNumber = (max = 100, min = 0) => Math.floor(Math.random() * (max - min + 1) + min)
 
@@ -7,8 +6,7 @@ export const normalizeUserAnswer = userAnswer => userAnswer.trim().toLowerCase()
 
 export const makeQuestion = (...params) => params.join(' ')
 
-export const communicationWithUser = (rule, prepareQuestionAndAnswer) => {
-  const userName = greetingUser()
+export const communicationWithUser = (rule, prepareQuestionAndAnswer, userName) => {
   console.log(rule)
 
   const amountOfCorrectAnswers = 3
@@ -26,9 +24,8 @@ export const communicationWithUser = (rule, prepareQuestionAndAnswer) => {
     }
     else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`)
-      return false
+      return
     }
   }
-
   console.log(`Congratulations, ${userName}!`)
 }
