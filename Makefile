@@ -3,6 +3,10 @@ install:
 	npm ci
 
 #	Target: run file brain-games.js
+start:
+	node bin/brain-app.js
+
+#	Target: run file brain-games.js
 brain-games:
 	node bin/brain-games.js
 
