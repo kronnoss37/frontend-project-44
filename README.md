@@ -1,16 +1,48 @@
-# 🎮 Brain Games — Набор консольных логических мини-игр
+# 🎮 Brain Games — Набор консольных мини-игр
 
-### Hexlet tests and linter status:
+#### Hexlet tests and linter status:
 
 [![Actions Status](https://github.com/kronnoss37/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/kronnoss37/frontend-project-44/actions)
 
-### Maintainability
+#### Maintainability
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/0002a5a0efa87e863a64/maintainability)](https://codeclimate.com/github/kronnoss37/frontend-project-44/maintainability)
 
-### Brain Games project installation
+## 🧠 Описание проекта
 
-See how to install the project.
+Проект состоит из пяти самостоятельных мини-игр. Каждая игра — это небольшая консольная головоломка, в которой пользователю предлагается решить задачу.  
+Игры построены на общем "движке", который отвечает за:
+
+---
+
+## ✨ Список игр
+
+- ➕ **Калькулятор** — вычисление выражений (сложение, вычитание, умножение)  
+- 🔢 **Арифметическая прогрессия** — нахождение пропущенного элемента  
+- ❗ **Проверка на чётность** — определить, является ли число чётным  
+- 🧮 **НОД** — поиск наибольшего общего делителя  
+- 🧠 **Простое ли число?** — проверка простое ли число
+
+Каждая игра задаёт три вопроса. Если игрок правильно отвечает на все — игра считается пройденной.
+
+---
+
+## 🧰 Стек технологий
+
+- Node.js
+- JavaScript (ES Modules)
+- readline-sync
+- ESLint
+
+---
+
+## 🎥 Демонстрация
+
+[![asciicast](https://asciinema.org/a/yXtUzDPHTPvFS5KlvT14f4riU.svg)](https://asciinema.org/a/yXtUzDPHTPvFS5KlvT14f4riU)
+
+---
+
+## 🚀 Установка и запуск
 
 ```bash
 # Clone the repository
@@ -21,7 +53,19 @@ cd frontend-project-44
 
 # Install dependencies for the program to work correctly
 make install
+
+# Run the application file with all the games
+make start
+
+make brain-games # run Greeting
+make brain-even # run Even Game
+make brain-calc # run Calculator Game
+make brain-gcd # run GCD Game
+make brain-progression # run Progression Game
+make brain-prime # run Prime Game
 ```
+
+<!-- Добавить запуск всех игр новой командой, а также добавить то, что можно запускать игры отдельными командами  -->
 
 ### Launching games in the Brain Games project
 
@@ -45,3 +89,7 @@ The fourth game is an Arithmetic Progression.
 The fifth game is a Check if a Number id Prime.
 
 [![asciicast](https://asciinema.org/a/rAnxSqPZ83GjdntXsrSWUNnDf.svg)](https://asciinema.org/a/rAnxSqPZ83GjdntXsrSWUNnDf)
+
+## 👤 Автор
+
+#### Kirill — Frontend Developer
