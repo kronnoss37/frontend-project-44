@@ -21,11 +21,11 @@ const prepareQuestionAndAnswer = () => {
   const indexOfMissingNum = getRandomNumber(9)
   const conversationOfNum = progression[indexOfMissingNum]
   progression[indexOfMissingNum] = '..'
-  const qeuestionParam = makeQuestion(progression.join(' '))
-  return [qeuestionParam, conversationOfNum]
+  const questionParam = makeQuestion(...progression)
+  return [questionParam, conversationOfNum]
 }
 
-export default () => {
+export default (userName) => {
   const rulesOfTheGame = 'What number is missing in the progression?'
-  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer)
+  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer, userName)
 }

@@ -24,11 +24,11 @@ const prepareQuestionAndAnswer = () => {
   const secondNum = getRandomNumber()
 
   const correctAnswer = calculateGCD(firstNum, secondNum)
-  const qeuestionParam = makeQuestion(firstNum, secondNum)
-  return [qeuestionParam, correctAnswer]
+  const questionParam = makeQuestion(firstNum, secondNum)
+  return [questionParam, correctAnswer]
 }
 
-export default () => {
+export default (userName) => {
   const rulesOfTheGame = 'Find the greatest common divisor of given numbers.'
-  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer)
+  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer, userName)
 }

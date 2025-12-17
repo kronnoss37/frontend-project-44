@@ -9,7 +9,7 @@ const calculateExpression = (firstOperand, mathOperator, secondOperand) => {
     case '*':
       return firstOperand * secondOperand
     default:
-      return null
+      return null // error?
   }
 }
 
@@ -32,11 +32,11 @@ const prepareQuestionAndAnswer = () => {
   const secondNum = getSecondOperand(mathOperator)
 
   const correctAnswer = calculateExpression(firstNum, mathOperator, secondNum)
-  const qeuestionParam = makeQuestion(firstNum, mathOperator, secondNum)
-  return [qeuestionParam, correctAnswer]
+  const questionParam = makeQuestion(firstNum, mathOperator, secondNum)
+  return [questionParam, correctAnswer]
 }
 
-export default () => {
+export default (userName) => {
   const rulesOfTheGame = 'What is the result of the expression?'
-  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer)
+  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer, userName)
 }

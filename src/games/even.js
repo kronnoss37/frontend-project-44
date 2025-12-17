@@ -7,11 +7,11 @@ const getCorrectAnswer = num => (isEvenNumber(num) ? 'yes' : 'no')
 const prepareQuestionAndAnswer = () => {
   const num = getRandomNumber()
   const correctAnswer = getCorrectAnswer(num)
-  const qeuestionParam = makeQuestion(num)
-  return [qeuestionParam, correctAnswer]
+  const questionParam = makeQuestion(num)
+  return [questionParam, correctAnswer]
 }
 
-export default () => {
+export default (userName) => {
   const rulesOfTheGame = 'Answer "yes" if the number is even, otherwise answer "no".'
-  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer)
+  communicationWithUser(rulesOfTheGame, prepareQuestionAndAnswer, userName)
 }
