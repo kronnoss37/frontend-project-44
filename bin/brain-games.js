@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import greetingUser from '../src/cli.js'
+import handleError from '../src/utils/errorHandler.js'
+import greetingUser from '../src/cli/cli.js'
 
-greetingUser()
+handleError(greetingUser)
