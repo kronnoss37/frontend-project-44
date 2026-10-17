@@ -61,7 +61,3 @@ make brain-gcd # run GCD Game
 make brain-progression # run Progression Game
 make brain-prime # run Prime Game
 ```
-
-## 👤 Автор
-
-#### Kirill — Frontend Developer
